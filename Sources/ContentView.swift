@@ -1,7 +1,8 @@
 import SwiftUI
 struct ContentView: View {
     var body: some View {
-       Text("aaa")
-       
+         NavigationView {
+            Text("aaa")
+         }
     }
 }
