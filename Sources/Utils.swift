@@ -22,7 +22,7 @@ func getBackgroundColor(element: ComponentArray)->Color {
 func getForegroundColor(element: ComponentArray)->Color {
     let styles: ComponentStyles = element.props.styles
     if(styles.color == "") {
-        return Color.white
+        return Color.blue
     }
     else {
         let color: Color = hexStringToUIColor(hex: styles.color)
