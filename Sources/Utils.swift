@@ -19,3 +19,14 @@ func getBackgroundColor(element: ComponentArray)->Color {
     }
     
 }
+func getForegroundColor(element: ComponentArray)->Color {
+    let styles: ComponentStyles = element.props.styles
+    if(styles.color == "") {
+        return Color.white
+    }
+    else {
+        let color: Color = hexStringToUIColor(hex: styles.color)
+        return color
+    }
+    
+}
