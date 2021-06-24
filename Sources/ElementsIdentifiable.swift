@@ -30,10 +30,7 @@ func hexStringToUIColor (hex:String) -> Color {
 import SwiftUI
 import Foundation
 
-
-
-struct  Elements: Identifiable{
-    
+struct ComponentArray : Identifiable {
     var id = UUID()
     var title: String
     var src: String
@@ -45,11 +42,63 @@ struct  Elements: Identifiable{
     var style: String!
     var action: String!
     var props: ComponentProps
+    var childs: [ComponentArray]!
+    var navContents: [ComponentArray]!
+    var radiogroup: [ComponentArray]!
+    
+    
 }
-struct ComponentProps {
+struct ComponentProps : Identifiable{
+    var id = UUID()
     var styles: ComponentStyles
+    var data: ComponentData
 }
-struct ComponentStyles {
+
+struct ComponentData : Identifiable{
+    var id = UUID()
+    var type: String
+    var typeDetails: DataTypeDetails
+    var data: [ComponentDataArray]
+}
+
+struct DataTypeDetails : Identifiable{
+    var id = UUID()
+    var sheetName: String
+    var colunmName: String
+    var idColumnName: String
+    var apiName: String
+    var apiKey: String
+    var apiIdKey: String
+}
+
+struct ComponentDataArray : Identifiable{
+    var id = UUID()
+    var key: String
+    var value: String
+}
+
+struct Font: Identifiable {
+    
+    var id = UUID()
+    var family: String
+    var size: Int
+}
+struct Padding : Identifiable{
+    var id = UUID()
+    var top: Int
+    var bottom: Int
+    var left: Int
+    var right: Int
+}
+struct Margin : Identifiable{
+    var id = UUID()
+    var top: Int
+    var bottom: Int
+    var left: Int
+    var right: Int
+}
+struct ComponentStyles : Identifiable{
+    var id = UUID()
     var width: Int
     var height: Int
     var level: String
@@ -64,21 +113,4 @@ struct ComponentStyles {
     var padding: Padding
     var margin: Margin
     
-}
-
-struct Font{
-    var family: String
-    var size: Int
-}
-struct Padding {
-    var top: Int
-    var bottom: Int
-    var left: Int
-    var right: Int
-}
-struct Margin {
-    var top: Int
-    var bottom: Int
-    var left: Int
-    var right: Int
 }
