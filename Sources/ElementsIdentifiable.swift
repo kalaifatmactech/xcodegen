@@ -97,6 +97,12 @@ struct Margin : Identifiable{
     var left: Int
     var right: Int
 }
+struct Position: Codable {
+    var top: CGFloat
+    var bottom: CGFloat
+    var left: CGFloat
+    var right: CGFloat
+}
 struct ComponentStyles : Identifiable{
     var id = UUID()
     var width: Int
@@ -109,8 +115,8 @@ struct ComponentStyles : Identifiable{
     var inputType: String
     var isEditbale: Bool
     var isChecked: Bool
+    var position: Position
     var font: Font
     var padding: Padding
     var margin: Margin
-    
 }
