@@ -30,7 +30,7 @@ func getForegroundColor(color: String)->Color {
     
 }
 
-func getPosition(position: Position)-> [CGFloat] {
+func getPosition(position: Position, width: CGFloat, height: CGFloat)-> [CGFloat] {
     
     if(position.left != 0.0 && position.top != 0.0) {
         return [position.left, position.top]
@@ -40,3 +40,4 @@ func getPosition(position: Position)-> [CGFloat] {
     }
     
 }
+
